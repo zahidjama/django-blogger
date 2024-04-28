@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Blogger</title>
+    </head>
+    <style>
+        .contianer{
+            width: 80%;
+        }
+        .main_div{
+            margin-top: 20px;
+            width: 60%;
+            height: auto;
+            margin: auto;
+            border: 1px solid black;
+            min-height: 150px;
+            display: flex;
+        }
+        .img{
+            width: 40%;
+            height: auto;
+            line-height: normal;
+        }
+        .img img{;
+            width: 100%;
+            height: auto;
+            text-align: left;
+        }
+        .txt h2{
+            padding-left: 10px;
+        }
+        .txt a{
+            padding-left: 10px;
+            line-height: 10px;
+        }
+        .txt p{
+            padding-left: 10px;
+            line-height: 30px;
+        }
+
+        </style>
+    </head>
+    <body>
+        {%include 'nav.html'%}
+        <div class="container">
+            {%for i in data%}
+            <br>
+            <div class="main_div">
+            <div class="img">
+                <img src="media/{{i.image}}">
+            </div>
+            <div class="txt">
+                
+                <h2>{{i.title}}</h2><br>
+                <p>By <u>{{i.uploader.name}}</u> @ {{i.create_at}}</p>
+                <a href="readpost?id={{i.id}}">Read it</a>
+            </div>
+            </div>
+            {%endfor%}
+
+
+        </div>
+
+    </body>
+</html>

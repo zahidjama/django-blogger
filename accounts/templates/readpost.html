@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Blogger</title>
+    </head>
+    <style>
+        .container{
+            width: 80%;
+        }
+        .main_div{
+            width: 80%;
+            height: auto;
+            min-height: 200px;
+            margin: auto;
+        }
+        .main_div img{
+            margin: auto;
+            width: 50%;
+            height: 60%;
+            border: 1px solid black;
+        }
+        .main_div h2{
+            margin: auto;
+            text-align: center;
+        }
+
+    </style>
+    <body>
+        {% include 'nav.html' %}
+        {%for i in data%}
+        <div class="container">
+            <div class="main_div">
+                <img src="media/{{i.image}}">
+                <h2>{{i.title}}</h2>
+                <p>{{i.content| safe}}</p>
+            </div>
+        </div>
+        {%endfor%}
+    </body>
+</html>

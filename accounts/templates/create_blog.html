@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Blogger</title>
+    </head>
+    <style>
+        .django-ckeditor-widget{
+            margin-left:200px;
+        }
+
+    </style>
+    <body>
+        {% include 'nav.html'%}
+        <center>
+        <h2>Create Blog</h2>
+        </center>
+        <table class="tbl" border="1">
+        <form method="post" enctype="multipart/form-data">
+            {%csrf_token%}
+            <table>
+                {{forms.errors}}
+                {{form.media}}
+              {{form.as_p}}
+            </table>
+            <input type="submit">
+        </table>
+        </form>
+    </body>
+</html>

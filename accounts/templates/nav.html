@@ -1,0 +1,34 @@
+<style>
+                .navbar{
+                width: 100%;
+                height: 70px;
+                background-color: lightblue;
+                text-align: center;
+                line-height: 4;
+            }
+            .navbar button{
+                width: 100px;
+                height: 25px;
+                border: 3px solid black;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+</style>
+<nav>
+    <div class="navbar">
+        {% if not user_login %}
+	<a href="/"><button>Home</button></a>
+        <a href="login"><button>Login</button></a>
+        <a href="signin"><button>Signin</button></a>
+        {%endif%}
+
+        {% if user_login %}
+        <a href="/"><button>Home</button></a>
+        <a href="myuploads"><button>My Uploads</button></a>
+        <a href="postblog"><button>Create Blog</button></a>
+        <a href="dashboard"><button>Dashboard</button></a>
+        <a href="logout"><button>Logout</button></a>
+        {%endif%}
+
+    </div>
+</nav>

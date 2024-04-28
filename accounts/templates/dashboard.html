@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>Blogger</title>
+
+    </head>
+    <body>
+        {%include 'nav.html'%}
+        <div>
+            <p>{{request.user.name}}</p>
+            <p>{{request.user.email}}</p>
+            <p>{{request.user.phone}}</p>
+        </div>
+    </body>
+</html>
